@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://img.freepik.com/vector-premium/diseno-vector-estadio-arena-ring-boxeo_116849-1843.jpg");
+    background-repeat: no-repeat;
+    background-color: rgb(46, 39, 39);
+    background-size: 90%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    color: rgb(236, 233, 29);
+    font-size: 40px;
+}
+
+#gameArea {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border: 2px solid #333;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.enemy {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+#kill{
+    font-size: 40px;
+    color: rgb(51, 49, 49);
+}

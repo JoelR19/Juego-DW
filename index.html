@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Steam fighters</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main>
+        
+            
+        <div class="title">
+            <h1>
+                Welcome to <span>Steam Fighter</span>
+            </h1>
+        </div>
+
+        <form >
+            <label for="name">Ingresa tu nombre</label>
+            <input id="name" type="text" placeholder="User">
+            <button type="button" onclick="redirigir()">Jugar!</button>
+            <p id="incompleto"></p>
+        </form>
+        
+    </main>
+</body>
+    <script>
+    function redirigir() {
+        // Obtener el valor del input
+        const nombre = document.getElementById('name').value;
+        const completar = document.getElementById('incompleto');
+        
+        // Verificar si el input no está vacío
+        if (nombre !== "") {
+            // Si el input tiene contenido, redirige a otra página
+            window.location.href = './Playing/Playing.html';
+        } else {
+            // Si el input está vacío, muestra un mensaje o alerta
+            completar.textContent = "Por favor, completa el campo antes de continuar.";
+        }
+    }
+    </script>
+</html>

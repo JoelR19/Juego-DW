@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borde Animado del Formulario</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid transparent; /* Borde original transparente */
+            border-radius: 10px; /* Bordes redondeados */
+            position: relative; /* Posicionamiento relativo para el efecto */
+            overflow: hidden; /* Asegura que nada sobresalga */
+        }
+
+        /* Línea animada que recorre el borde */
+        form:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 5px solid #4CAF50; /* Color de la línea */
+            border-radius: 10px; /* Bordes redondeados */
+            animation: moveBorder 4s linear infinite; /* Aplica la animación */
+            pointer-events: none; /* Evita que el pseudo-elemento interfiera con los eventos */
+        }
+
+        /* Animación de la línea que recorre el borde */
+        @keyframes moveBorder {
+            0% {
+                transform: translateY(0); /* Comienza en la parte superior */
+            }
+            25% {
+                transform: translateY(0); /* Mantiene la posición en la parte superior */
+            }
+            30% {
+                transform: translateX(100%); /* Se mueve hacia la parte derecha */
+            }
+            55% {
+                transform: translateX(100%); /* Mantiene la posición en la parte derecha */
+            }
+            60% {
+                transform: translateY(100%); /* Se mueve hacia la parte inferior */
+            }
+            85% {
+                transform: translateY(100%); /* Mantiene la posición en la parte inferior */
+            }
+            100% {
+                transform: translateX(0); /* Regresa a la parte izquierda */
+            }
+        }
+
+        /* Estilo de los elementos dentro del formulario */
+        label, input, button {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        input {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Color de fondo en hover */
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name">
+    <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>
